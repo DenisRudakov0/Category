@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <aside class="">
+      <h3>Мобильные телефоны</h3>
+      <h5>Производитель</h5>
+      <form class="form-check" action="index.html" method="post">
+        <p><input type="checkbox" name="a" value="Xiaomi"> Xiaomi</p>
+        <p><input type="checkbox" name="a" value="Samsung"> Samsung</p>
+        <p><input type="checkbox" name="a" value="Apple"> Apple</p>
+        <p><input type="checkbox" name="a" value="Huawei"> Huawei</p>
+        <p><input type="checkbox" name="a" value="HONOR"> HONOR</p>
+        <p><input type="checkbox" name="a" value="POCO"> POCO</p>
+        <p><input type="checkbox" name="a" value="Realme"> Realme</p>
+        <p><input type="checkbox" name="a" value="Nokia"> Nokia</p>
+        <p><input type="checkbox" name="a" value="OnePlus"> OnePlus</p>
+        <p><input type="checkbox" name="a" value="Google"> Google</p>
+      </form>
+    </aside>
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+  </body>
+</html>
