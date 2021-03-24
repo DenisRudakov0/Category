@@ -3,5 +3,13 @@
 {% block title %}Список товаров{% endblock %}
 
 {% block content %}
-  <h1>Пока все ок</h1>
+  {% for el in news %}
+  <div class="alert alert-warning">
+    <h3>{{ el.title }}</h3>
+    <p>{{el.full_text}}</p>
+    <span><s>{{el.cena}}</s></span>
+    <span>{{el.cena_action}}</span>
+  </div>
+  
+  {% endfor %}
 {% endblock %}

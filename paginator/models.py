@@ -11,7 +11,7 @@ class Product(models.Model):
     date_end = models.DateTimeField('Дата окончания акции')
 
     def __str__(self):
-        return f'Новость: {self.title}'
+        return self.title
 
     class Meta:
         verbose_name = 'Новость'
