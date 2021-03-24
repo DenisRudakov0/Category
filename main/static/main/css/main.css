@@ -46,3 +46,7 @@ main .features {
   text-align: center;
   width: 75%;
 }
+
+h1 {
+  color: white;
+}
