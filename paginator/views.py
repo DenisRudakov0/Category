@@ -6,7 +6,7 @@ from django.db.models import Q
 def news_home(request):
     search_query = request.GET.get('search', '')
     if search_query:
-        news = Product.objects.filter(title__icontains = search_query)
+        news = Product.objects.filter(Q(title__icontains = search_query) | Q(full_text__icontains = search_query))
     else:
         news = Product.objects.all()
 
