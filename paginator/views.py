@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from .models import Product
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 def news_home(request):
-    news = Product.objects.all()
+    search_query = request.GET.get('search', '')
+    if search_query:
+        news = Product.objects.filter(title__icontains = search_query)
+    else:
+        news = Product.objects.all()
+
     paginator = Paginator(news, 3)
 
     page_number = request.GET.get('page', 1)

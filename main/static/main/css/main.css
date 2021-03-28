@@ -58,8 +58,7 @@ main .features p {max-width: 400px; margin: 20px auto}
   position: relative;
 }
 
-.alert-warning {
-  float: right;
+.alert-success {
   width: 400px;
   margin: 20px 34%;
   text-align: left;

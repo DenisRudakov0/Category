@@ -4,8 +4,15 @@
 
 {% block content %}
 
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline" action="{% url 'news_home' %}">
+      <input class="form-control mr-sm-2" type="text" placeholder="Поиск" name = "search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+    </form>
+  </nav>
+
   {% for el in page_object %}
-  <div class="alert alert-warning">
+  <div class="alert alert-success">
     <h3>{{ el.title }}</h3>
     <p>{{el.full_text}}</p>
     <span><s>{{el.cena}}</s></span>
@@ -17,7 +24,7 @@
   {% if is_paginated %}
 
   <nav aria-label="Page navigation example">
-  <ul class="pagination">
+  <ul class="nav justify-content-center">
     <li class="page-item {% if not prev_url %} disabled {% endif %}">
       <a class="page-link" href="{{ prev_url }}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
